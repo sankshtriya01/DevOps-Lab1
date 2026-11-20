@@ -22,10 +22,20 @@ pipeline {
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                echo 'Building Docker image...'
+                sh 'docker build -t lab1-python-app:latest .'
+            }
+        }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying sample application...'
-                sh 'python3 app/app.py'
+                echo 'Deploying application container...'
+                sh '''
+                    docker rm -f lab1-python-app || true
+                    docker run -d --name lab1-python-app lab1-python-app:latest
+                '''
             }
         }
     }
