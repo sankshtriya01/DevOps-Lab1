@@ -20,15 +20,21 @@ To establish a basic DevOps workflow using Git, GitHub, Docker, Jenkins, and Pyt
 5. Configured a Jenkins pipeline using a Jenkinsfile.
 6. Connected Jenkins to the GitHub repository.
 7. Executed the pipeline successfully.
+8. Installed Docker CLI in the custom Jenkins image.
+9. Configured Jenkins to communicate with the Docker daemon.
+10. Created a Dockerfile for the Python application.
+11. Updated Jenkinsfile to build a Docker image and deploy a container.
+12. Verified the deployed container and application logs.
 
 ## Jenkins Pipeline Stages
 
 | Stage | Description | Result |
 |---|---|---|
-| Checkout | Jenkins loads the pipeline from GitHub | Success |
-| Build | Python application syntax compilation | Success |
-| Test | Automated unit tests | Success |
-| Deploy | Executes the sample application | Success |
+| Checkout | Loads pipeline configuration from GitHub | Success |
+| Build | Compiles Python application | Success |
+| Test | Executes automated unit tests | Success |
+| Docker Build | Builds application Docker image | Success |
+| Deploy | Runs application container | Success |
 
 ## Observations
 
@@ -41,3 +47,15 @@ To establish a basic DevOps workflow using Git, GitHub, Docker, Jenkins, and Pyt
 ## Conclusion
 
 Successfully established a basic CI/CD workflow using Git, GitHub, Docker, and Jenkins. The pipeline automated application compilation, testing, and execution.
+
+## Docker Deployment
+
+- Docker image: lab1-python-app:latest
+- Container name: lab1-python-app
+- Base image: python:3.13-slim
+- Deployment method: Docker container
+- Application output: Hello, Student! Welcome to DevOps Lab 1.
+
+## Final Observation
+
+The updated Jenkins pipeline successfully automated Docker image creation and container deployment. The application ran successfully inside the deployed container.
